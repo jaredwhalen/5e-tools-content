@@ -151,6 +151,7 @@ The following are actions that should be taken by the DM and players at set poin
 
 ## Links
 * Harvesting <a href='pdfs/harvesting.pdf' target='_blank'>[Guide]</a>
+* UA Into the Wild <a href='pdfs/UA_IntoTheWild.pdf' target='_blank'>[Guide]</a>
 
     `;
 </script>
