@@ -1,0 +1,90 @@
+@import 'includes/expose-vars';
+@import 'includes/bootstrap-custom';
+@import 'includes/util-column';
+@import 'includes/util-spacing';
+@import 'includes/util-spacing-night';
+@import 'includes/util';
+@import 'includes/util-5etools';
+@import 'includes/util-5etools-night';
+@import 'includes/util-mobile';
+@import 'includes/util-popwindow';
+@import 'includes/render';
+@import 'includes/render-night';
+@import 'includes/hover';
+@import 'includes/hover-night';
+@import 'includes/source';
+@import 'includes/source-night';
+@import 'includes/list';
+@import 'includes/nav';
+@import 'includes/style';
+@import 'includes/toast';
+@import 'includes/toast-night';
+@import 'includes/filter';
+@import 'includes/filter-night';
+@import 'includes/ui';
+@import 'includes/ui-night';
+@import 'includes/util-print';
+
+body {
+	line-height: 1.42857143;
+}
+
+h1,
+h2 {
+	@extend .rd__h;
+	@extend .ve-night-mode;
+	color: #d29a38 !important;
+}
+
+h1 {
+	@extend .rd__h--0;
+}
+
+h2 {
+	@extend .rd__h--1;
+}
+
+.stats {
+	font-family: Convergence, Arial, sans-serif;
+	width: 100%;
+	font-size: 12.6px;
+	table-layout: fixed;
+	overflow-wrap: break-word;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	@extend .w-100;
+	@extend .rd__table;
+	@extend .stripe-odd-table;
+}
+
+/* Remove list style for all checkbox lists */
+ul.checkbox-list,
+ol.checkbox-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+/* Add padding to nested lists for indentation */
+ul.checkbox-list ul,
+ul.checkbox-list ol,
+ol.checkbox-list ul,
+ol.checkbox-list ol {
+	padding-left: 20px;
+}
+
+.note-list {
+	padding-left: 40px !important;
+}
+
+/* Style for checkboxes to add margin */
+li input[type='checkbox'] {
+	margin-right: 8px;
+}
+
+
+ul table {
+    margin: 5x 0px 10px;
+}
