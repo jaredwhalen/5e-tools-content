@@ -27,7 +27,9 @@
 	"dependencies": {
 		"@sveltejs/adapter-static": "^3.0.2",
 		"marked": "^13.0.3",
+		"panzoom": "^9.4.3",
 		"sass": "^1.77.8",
+		"svelte-pan-zoom": "^0.0.12",
 		"svelte-preprocess": "^6.0.2"
 	}
 }

@@ -2996,183 +2996,183 @@ th.border {
  * Print styles
  ***************************************/
 
-@include vars.mix-is-print {
-	@page {
-		margin: 10mm 15mm;
-	}
+// @include vars.mix-is-print {
+// 	@page {
+// 		margin: 10mm 15mm;
+// 	}
 
-	// region general
-	body {
-		color: #000 !important;
-		overflow: visible !important;
-		background: none !important;
-		font-size: 10px !important;
-	}
+// 	// region general
+// 	body {
+// 		color: #000 !important;
+// 		overflow: visible !important;
+// 		background: none !important;
+// 		font-size: 10px !important;
+// 	}
 
-	header,
-	nav {
-		display: none !important;
-	}
+// 	header,
+// 	nav {
+// 		display: none !important;
+// 	}
 
-	strong,
-	.bold {
-		font-weight: 600;
-	}
+// 	strong,
+// 	.bold {
+// 		font-weight: 600;
+// 	}
 
-	a[href]::after {
-		content: none !important; // Remove auto-expanded link URLs
-	}
+// 	a[href]::after {
+// 		content: none !important; // Remove auto-expanded link URLs
+// 	}
 
-	.help,
-	.help--hover {
-		text-decoration: none !important;
-	}
+// 	.help,
+// 	.help--hover {
+// 		text-decoration: none !important;
+// 	}
 
-	.btn-reroll,
-	.rollbox-min,
-	.rollbox,
-	.spacer-name {
-		display: none !important;
-	}
+// 	.btn-reroll,
+// 	.rollbox-min,
+// 	.rollbox,
+// 	.spacer-name {
+// 		display: none !important;
+// 	}
 
-	a,
-	.roller {
-		color: #000 !important;
-	}
-	// endregion
+// 	a,
+// 	.roller {
+// 		color: #000 !important;
+// 	}
+// 	// endregion
 
-	// region stats
-	.stats .stats-source,
-	.stats-source-abbreviation,
-	.stats th {
-		color: #000 !important;
-	}
+// 	// region stats
+// 	.stats .stats-source,
+// 	.stats-source-abbreviation,
+// 	.stats th {
+// 		color: #000 !important;
+// 	}
 
-	th.border,
-	.wrp-stats-table th.border {
-		background: #000 !important;
-		height: 1px !important;
-	}
+// 	th.border,
+// 	.wrp-stats-table th.border {
+// 		background: #000 !important;
+// 		height: 1px !important;
+// 	}
 
-	td.divider div {
-		height: 1px !important;
-		background: #000 !important;
-		margin: 0 !important;
-	}
+// 	td.divider div {
+// 		height: 1px !important;
+// 		background: #000 !important;
+// 		margin: 0 !important;
+// 	}
 
-	.stats td,
-	.stats th {
-		padding: 1px 2px !important;
-	}
+// 	.stats td,
+// 	.stats th {
+// 		padding: 1px 2px !important;
+// 	}
 
-	.stats--book-large {
-		.rd__b--3,
-		table,
-		p {
-			margin: 0 0 3px !important;
-		}
-	}
+// 	.stats--book-large {
+// 		.rd__b--3,
+// 		table,
+// 		p {
+// 			margin: 0 0 3px !important;
+// 		}
+// 	}
 
-	.stats--book {
-		box-shadow: none !important;
-	}
-	// endregion
+// 	.stats--book {
+// 		box-shadow: none !important;
+// 	}
+// 	// endregion
 
-	// region list pages
-	#listcontainer,
-	#stat-tabs,
-	#float-token,
-	.btn-name-pronounce,
-	.btn-stats-name {
-		display: none !important;
-	}
+// 	// region list pages
+// 	#listcontainer,
+// 	#stat-tabs,
+// 	#float-token,
+// 	.btn-name-pronounce,
+// 	.btn-stats-name {
+// 		display: none !important;
+// 	}
 
-	.wrp-stats-table {
-		border-top: 0 !important;
-		border-bottom: 0 !important;
-	}
-	// endregion
+// 	.wrp-stats-table {
+// 		border-top: 0 !important;
+// 		border-bottom: 0 !important;
+// 	}
+// 	// endregion
 
-	// region classes.html
-	#sticky-nav {
-		display: none !important;
-	}
+// 	// region classes.html
+// 	#sticky-nav {
+// 		display: none !important;
+// 	}
 
-	#classtable table tr:nth-child(odd) td {
-		background: #d3d3d3 !important;
-	}
-	// endregion
+// 	#classtable table tr:nth-child(odd) td {
+// 		background: #d3d3d3 !important;
+// 	}
+// 	// endregion
 
-	// region bestiary.html
-	.mon__name--token .stats-source {
-		padding-right: 0 !important;
-	}
+// 	// region bestiary.html
+// 	.mon__name--token .stats-source {
+// 		padding-right: 0 !important;
+// 	}
 
-	.mon__stat-header-underline {
-		border-bottom: 1px solid #000 !important;
-		color: #000 !important;
-	}
-	// endregion
+// 	.mon__stat-header-underline {
+// 		border-bottom: 1px solid #000 !important;
+// 		color: #000 !important;
+// 	}
+// 	// endregion
 
-	// region render
-	.rd__b-inset {
-		background: none !important;
-		box-shadow: none !important;
-		border-color: #000 !important;
-	}
+// 	// region render
+// 	.rd__b-inset {
+// 		background: none !important;
+// 		box-shadow: none !important;
+// 		border-color: #000 !important;
+// 	}
 
-	.rd__b-special,
-	.rd__li {
-		break-inside: avoid;
-		page-break-inside: avoid;
-	}
-	// endregion
+// 	.rd__b-special,
+// 	.rd__li {
+// 		break-inside: avoid;
+// 		page-break-inside: avoid;
+// 	}
+// 	// endregion
 
-	.bkmv-active > *:not(.bkmv) {
-		display: none !important;
-	}
+// 	.bkmv-active > *:not(.bkmv) {
+// 		display: none !important;
+// 	}
 
-	.bkmv-active .bkmv {
-		position: relative;
-		top: unset;
-		right: unset;
-		bottom: unset;
-		left: unset;
-		width: calc(100vw - 20px);
+// 	.bkmv-active .bkmv {
+// 		position: relative;
+// 		top: unset;
+// 		right: unset;
+// 		bottom: unset;
+// 		left: unset;
+// 		width: calc(100vw - 20px);
 
-		&__ {
-			&no-breaks {
-				break-before: unset !important;
-				break-after: unset !important;
-				break-inside: unset !important;
-			}
+// 		&__ {
+// 			&no-breaks {
+// 				break-before: unset !important;
+// 				break-after: unset !important;
+// 				break-inside: unset !important;
+// 			}
 
-			&wrp--columns-1 {
-				column-count: 1;
-			}
+// 			&wrp--columns-1 {
+// 				column-count: 1;
+// 			}
 
-			&wrp--columns-2 {
-				column-count: 2;
-			}
-		}
+// 			&wrp--columns-2 {
+// 				column-count: 2;
+// 			}
+// 		}
 
-		th.border {
-			border: 0 !important;
-			padding: 0 !important;
-		}
-	}
+// 		th.border {
+// 			border: 0 !important;
+// 			padding: 0 !important;
+// 		}
+// 	}
 
-	.stats--bkmv {
-		break-before: auto !important;
-		break-after: auto !important;
-		break-inside: avoid !important;
+// 	.stats--bkmv {
+// 		break-before: auto !important;
+// 		break-after: auto !important;
+// 		break-inside: avoid !important;
 
-		tr {
-			break-inside: auto !important;
-		}
-	}
+// 		tr {
+// 			break-inside: auto !important;
+// 		}
+// 	}
 
-	.cancer__anchor {
-		display: none !important;
-	}
-}
+// 	.cancer__anchor {
+// 		display: none !important;
+// 	}
+// }

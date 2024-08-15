@@ -229,15 +229,15 @@ $font-line-height: 1.42857143;
 	border-left: 1px solid $rgb-border-grey;
 }
 
-@mixin mix-is-print {
-	@media print {
-		@content;
-	}
+// @mixin mix-is-print {
+// 	@media print {
+// 		@content;
+// 	}
 
-	@at-root html.is-faux-print #{&} {
-		@content;
-	}
-}
+// 	@at-root html.is-faux-print #{&} {
+// 		@content;
+// 	}
+// }
 
 /* *** */
 
