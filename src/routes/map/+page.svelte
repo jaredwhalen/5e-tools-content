@@ -8,6 +8,7 @@
 	let imageW;
 
 	let coords;
+    let location;
 
 	// Initialize panzoom on the image element
 	function initPanzoom(node) {
@@ -19,17 +20,22 @@
 			boundsPadding: 1 // Prevent dragging the image beyond its boundaries
 		});
 	}
+
+    let numColumns = 49;
+    let numRows = 39;
+    let hemisphereDivide = 20;
+
 </script>
 
 <div id="container" bind:clientWidth={imageW}>
 	{#if coords}
-		<div class="coords">{coords}</div>
+		<div class="coords">{coords}{@html location?.length ? `<ul>${location.split(";").map(l => `<li>${l.trim()}</li>`).join('')}</ul>` : ''}</div>
 	{/if}
 
 	<!-- Use the image with panzoom -->
 	<div class="zoom" use:initPanzoom>
 		{#if imageW}
-			<HexGrid bind:coords containerWidth={imageW} numColumns={49} numRows={39} />
+			<HexGrid bind:coords bind:location containerWidth={imageW} {numColumns} {numRows} {hemisphereDivide} />
 		{/if}
 		<img src={mapImage} alt="Zoomable and pannable map image" />
 	</div>
@@ -67,4 +73,10 @@
 		white-space: nowrap;
 		z-index: 1000;
 	}
+
+    :global {
+        ul {
+            margin: 0px;
+        }
+    }
 </style>

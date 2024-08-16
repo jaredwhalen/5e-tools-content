@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@rollup/plugin-dsv": "^3.0.4",
 		"@sveltejs/adapter-static": "^3.0.2",
 		"marked": "^13.0.3",
 		"panzoom": "^9.4.3",
