@@ -30,7 +30,7 @@
 		{
 			label: 'CR rings',
 			id: 'show-cr-rings',
-			checked: 'no'
+			checked: false
 		}
 	];
 
