@@ -91,7 +91,7 @@
 		<g transform="translate(0,-{hexHeight / 2})">
 			{#each Array(numRows).fill(0) as _, rowIndex}
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				{#each Array(numColumns).fill(0) as _, colIndex}
+				{#each Array(numColumns - 2).fill(0) as _, colIndex}
 					{@const hexCoords =
 						generateColumnLabel(colIndex) +
 						(rowIndex + 1) +
