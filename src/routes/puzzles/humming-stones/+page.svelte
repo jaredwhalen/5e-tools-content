@@ -30,6 +30,12 @@
 		}
 	}
 
+	function playNote(note) {
+		initSynth();
+		synth.triggerAttackRelease(note, '8n');
+
+	}
+
 	// Function to start playing a note
 	function startNote(note) {
 		initSynth();
@@ -47,34 +53,19 @@
 
 	// Handle circle click
 	function handleCircleClick(note) {
-		startNote(note);
+		playNote(note);
 
 		guesses.push(note);
 
 		guesses = guesses;
 
-		console.log(guesses.includes(note));
-
 		if (JSON.stringify(guesses) != JSON.stringify(originalNotes.slice(0, guesses.length))) {
-            resetSequence()
-        }
+			resetSequence();
+		}
 
 		if (JSON.stringify(guesses) == JSON.stringify(originalNotes)) {
 			success = true;
 		}
-
-		// // Check if the clicked note is the correct one in sequence
-		// if (note === originalNotes[currentIndex]) {
-		//   glowingNote = note; // Highlight the correct note
-		//   currentIndex++;
-
-		//   // Check if the entire sequence is completed
-		//   if (currentIndex === originalNotes.length) {
-		//     success = true;
-		//   }
-		// } else {
-		//   resetSequence(); // Incorrect note, reset the sequence
-		// }
 	}
 
 	// Reset the sequence and glowing effects
@@ -95,11 +86,7 @@
 		{#each notes as note, index}
 			<div
 				class="circle"
-				on:mousedown={() => handleCircleClick(note)}
-				on:touchstart={() => handleCircleClick(note)}
-				on:mouseup={stopNote}
-				on:touchend={stopNote}
-				on:mouseleave={stopNote}
+				on:click={() => handleCircleClick(notes[index])}
 				class:glow={guesses.includes(note)}
 				class:success-glow={success}
 				style="transform: translate(calc(50% + {Math.cos((index / numCircles) * Math.PI * 2) *
@@ -135,7 +122,7 @@
 	.circle {
 		position: absolute;
 		aspect-ratio: 1;
-		width: 10vw;
+		width: 15vw;
 		max-width: 140px;
 		min-width: 80px;
 		border-radius: 50%;
