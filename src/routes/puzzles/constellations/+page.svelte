@@ -53,19 +53,24 @@
 	let offsetY = 0;
 	let complete = false;
 
-	function updateGridDimensions() {
-		// Calculate grid dimensions based on viewport
-		gridWidth = Math.floor(window.innerWidth / 96); // 96 pixels = 1 inch
-		gridHeight = Math.floor(window.innerHeight / 96);
+	// Scale factor for inch calibration (1 means 96px = 1in)
+	const INCH_SCALE = 1.4; // Adjust this value to calibrate grid size
 
+	function updateGridDimensions() {
+		// Calculate grid dimensions based on viewport, accounting for scale
+		gridWidth = Math.floor(window.innerWidth / (96 * INCH_SCALE));
+		gridHeight = Math.floor(window.innerHeight / (96 * INCH_SCALE));
+		
 		// Calculate offsets to center the puzzle
-		// Use Math.floor for both to ensure consistent positioning
 		offsetX = Math.floor((gridWidth - challenges[currentChallenge].size) / 2);
 		offsetY = Math.floor((gridHeight - challenges[currentChallenge].size) / 2);
 
 		// Ensure minimum offset of 1 to prevent edge touching
 		offsetX = Math.max(1, offsetX);
 		offsetY = Math.max(1, offsetY);
+
+		// Set the scale CSS variable
+		document.documentElement.style.setProperty('--inch-scale', `${INCH_SCALE}`);
 	}
 
 	onMount(() => {
@@ -205,12 +210,17 @@
 {/if}
 
 <style lang="scss">
+	:global(:root) {
+		--inch-scale: 1;
+	}
+
 	.puzzle-wrapper {
 		position: fixed;
+		transform:translateX(calc(-0.5in * var(--inch-scale)));
 		inset: 0;
-		background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-			linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-		background-size: 1in 1in;
+		// background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+		// 	linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+		// background-size: calc(1in * var(--inch-scale)) calc(1in * var(--inch-scale));
 	}
 
 	.grid-container {
@@ -222,10 +232,10 @@
 	.puzzle-button,
 	.reset-button {
 		position: absolute;
-		width: 1in;
-		height: 1in;
-		top: calc(var(--row) * 1in);
-		left: calc(var(--col) * 1in);
+		width: calc(1in * var(--inch-scale));
+		height: calc(1in * var(--inch-scale));
+		top: calc(var(--row) * 1in * var(--inch-scale));
+		left: calc(var(--col) * 1in * var(--inch-scale));
 		padding: 0;
 		border-radius: 50%;
 		border: none;
@@ -274,8 +284,8 @@
 
 	.reset-button {
 		position: absolute;
-		left: var(--puzzle-center);
-		top: var(--puzzle-bottom);
+		left: calc(var(--puzzle-center) * var(--inch-scale));
+		top: calc(var(--puzzle-bottom) * var(--inch-scale));
 		transform: translateX(-50%);
 		width: 1in;
 		height: 1in;
