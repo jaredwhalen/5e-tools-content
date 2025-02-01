@@ -30,6 +30,7 @@
 		"@sveltejs/adapter-static": "^3.0.2",
 		"archieml": "^0.5.0",
 		"change-case": "^5.4.4",
+		"lucide-svelte": "^0.474.0",
 		"marked": "^13.0.3",
 		"panzoom": "^9.4.3",
 		"sass": "^1.77.8",
