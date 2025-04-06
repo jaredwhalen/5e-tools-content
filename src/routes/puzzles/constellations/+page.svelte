@@ -54,7 +54,7 @@
 	let complete = false;
 
 	// Scale factor for inch calibration (1 means 96px = 1in)
-	const INCH_SCALE = 1.4; // Adjust this value to calibrate grid size
+	const INCH_SCALE = 1.3; // Adjust this value to calibrate grid size
 
 	function updateGridDimensions() {
 		// Calculate grid dimensions based on viewport, accounting for scale
